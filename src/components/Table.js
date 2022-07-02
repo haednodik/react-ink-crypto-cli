@@ -28,7 +28,7 @@ const Table = () => {
 					<Text>24 HOUR CHANGE</Text>
 				</Box>
 				<Box width="25%">
-					<Text>ALL TIME HIGHT</Text>
+					<Text>ALL TIME HIGH</Text>
 				</Box>
 			</Box>
 			<br />
