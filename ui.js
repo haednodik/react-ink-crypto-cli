@@ -1,11 +1,12 @@
 'use strict';
 const React = require('react');
-const {Text} = require('ink');
+const Gradient = require('ink-gradient');
+const BigText = require('ink-big-text');
 
-const App = ({name = 'Stranger'}) => (
-	<Text>
-		Hello, <Text color="green">{name}</Text>
-	</Text>
+const App = () => (
+    <Gradient name="summer">
+        <BigText text="crypto cli" align='center' font='chrome'/>
+    </Gradient>
 );
 
 module.exports = App;
