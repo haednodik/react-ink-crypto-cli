@@ -6,14 +6,22 @@ const { useState, useEffect } = React;
 
 const { Box, Text, Newline } = require("ink");
 
+const axios = require('axios');
+
+// const cryptoData = require("../data.json");
+
+const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin%2C%20litecoin%2C%20matic-network%2C%20ethereum%2C%20tether%2C%20binancecoin%2C%20solana%2C%20aave%2C%20cardano%2C%20tron&order=market_cap_desc&per_page=100&page=1&sparkline=false'
+
 const cryptoData = require("../data.json");
 
 const Table = () => {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		setData(cryptoData);
-	});
+            axios.get(url)
+            .then(response => setData(response.data))
+            .catch(e => console.log(e))
+	}, []);
 
 	return (
 		<Box borderStyle="single" padding={2} flexDirection="column">
