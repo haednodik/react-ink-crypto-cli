@@ -31,7 +31,7 @@ const Table = () => {
 					<Text>ALL TIME HIGH</Text>
 				</Box>
 			</Box>
-			<br />
+			<Newline />
 			{data.map(
 				({ id, name, current_price, price_change_percentage_24h, ath }) => (
 					<Box key={id}>
@@ -39,13 +39,15 @@ const Table = () => {
 							<Text>{name}</Text>
 						</Box>
 						<Box width="25%">
-							<Text>{current_price}</Text>
+							<Text color="cyan">{current_price}</Text>
 						</Box>
 						<Box width="25%">
-							<Text>{price_change_percentage_24h}</Text>
+							<Text backgroundColor={Math.sign(price_change_percentage_24h) < 0 ? 'red' : 'green'}>
+								{price_change_percentage_24h}
+							</Text>
 						</Box>
 						<Box width="25%">
-							<Text>{ath}</Text>
+							<Text color="green">{ath}</Text>
 						</Box>
 					</Box>
 				)
